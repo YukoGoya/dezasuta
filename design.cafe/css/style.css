@@ -67,10 +67,7 @@ h2{
 }
 
 .about_img img{
-    width:500px;
-    height:560px;
-    object-fit: cover;
-    border-bottom-right-radius: 80px;
+    max-width:  500px;
 }
 
 .about_text img{
@@ -83,6 +80,8 @@ h2{
     justify-content: space-between;
     align-items: center;
     margin:0 auto 100px auto;
+    gap:5%;
+    padding:0 10px;
 }
 
 h3{
@@ -104,6 +103,7 @@ h3{
     justify-content: space-between;
     margin: 0 auto;
     padding: 0 10px;
+    gap: 3%;
 }
 
 .menu_title{
@@ -112,24 +112,28 @@ h3{
 }
 
 .menu_img img{
-    position: relative;
-    width: 300px;
-    height:200px;
-    object-fit: cover;
-    border-top-right-radius: 40px;
+    /* position: relative; */
+    max-width: 300px;
+    /* height:200px; */
+    /* object-fit: cover;
+    border-top-right-radius: 40px; */
     margin-top: 50px;
     margin-bottom: 45px;
 }
 
 h4{
     font-size: 38px;
+    margin: -60px 0;
     color: #D30202;
-    position: absolute;
+    padding-left: 10px;
+    font-weight: lighter;
+    /* position: absolute; */
     z-index: 9999;
     /* bottom:-20px; */
 }
 
 .menu_img p{
+    padding-top: 80px;
     max-width: 300px;
 }
 
@@ -152,6 +156,7 @@ h4{
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    padding: 0 10px;
 }
 
 .event_title img{
@@ -218,6 +223,7 @@ footer{
     padding-top: 83px;
     padding-bottom: 77px;
 }
+
 .footer_logo{
     max-width: 225px;
     margin-right: 68px;
@@ -241,5 +247,253 @@ footer{
     width:6%;
     position: fixed;
     bottom: 20px;
-    right:20px;
+    right: 20px;
+}
+
+.sp_nav, .hamberger{
+    display: none;
+}
+
+.sp_about,.sp_br,.sp_gallary_img{
+    display: none;
+}
+
+@media screen and (max-width:1100px){
+    .header_inner nav{
+        display: none;
+    }
+
+    .hamberger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        height: 30px;
+        width: 33px;
+        z-index: 9999;
+        right: 0;
+    }
+
+    .hamberger span{
+        width:33px;
+        height: 3px;
+        background-color: #fff;
+        position: absolute;
+        content:"";
+        top: 20px;
+        right: 10px;
+        z-index: 9999;
+        transition: 0.5s;
+    }
+
+    .hamberger span::before,
+    .hamberger span::after{
+        position: absolute;
+        content: "";
+        width: 33px;
+        height: 3px;
+        background-color: #fff;
+        transition: 0.5s;
+    }
+
+    .hamberger span::before{
+        top: -10px;
+    }
+
+    .hamberger span::after{
+        top: 10px;
+    }
+
+    .hamberger.open span{
+        background-color: transparent;
+    }
+
+    .hamberger.open span::before,
+    .hamberger.open span::after{
+        top:0;
+    }
+
+    .hamberger.open span::before{
+        transform: rotate(45deg);
+    }
+
+    .hamberger.open span::after{
+        transform: rotate(-45deg);
+    }
+
+    .sp_nav{
+        position: absolute;
+        width:100%;
+        height: 100vh;
+        background-color: #00000092;
+    }
+
+    .sp_nav ul{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sp_nav li{
+        padding: 16px;
+        font-size: 16px;
+        color:#fff;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .top_sub{
+        font-size: 25px;
+    }
+
+    .about_text img{
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width:767px){
+    .top{
+        margin:50px auto;
+    }
+    .top_sub{
+        font-size: 20px;
+    }
+
+    h2{
+        font-size: 45px;
+        letter-spacing: normal;
+    }
+
+    .top_text{
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .about_us{
+        display: none;
+    }
+
+    .sp_about{
+        display: block;
+    }
+
+    .sp_about_logo{
+        max-width: 200px;
+        margin: 0 auto 10px auto;
+    }
+
+    h3{
+        font-size: 35px;
+        line-height: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .sp_about_text img{
+        max-width: 100%;
+    }
+
+    .sp_about_text p{
+        font-size: 15px;
+        line-height: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+    }
+
+    .menu_title{
+        margin-top: 50px;
+        max-width: 130px;
+    }
+
+    .menu_content{
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .menu_img img{
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .menu_img p{
+        margin-bottom: 50px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+     .menu_text p{
+        text-align: center;
+     }
+
+    .gallary_title{
+        max-width: 200px;
+    }
+
+    .gallary_img{
+        display: none;
+    }
+
+    .sp_gallary_img{
+        display: block;
+        max-width: 100%;
+    }
+
+    .event_title{
+        max-width: 140px;
+        margin: 0 auto;
+    }
+
+    .event_text li{
+        display: flex;
+    }
+
+    .date{
+        font-size: 20px;
+    }
+
+    .news{
+        font-size:20px;
+    }
+
+    .access_title{
+        max-width: 180px;
+        margin: 0 auto;
+    }
+
+    .footer{
+        flex-direction: column;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer_text{
+        padding-top: 40px;
+    }
+
+    .footer_logo{
+        max-width: 60%;
+    }
+
+    .page_top{
+        max-width: 200px;
+        width:20%;
+    }
+}
+
+.slick-dots{
+    bottom: 0;
+}
+
+.slick-dots li button:before{
+    color:#fff;
+    font-size: 10px;
+}
+
+.slick-dots li.slick-active button:before{
+    color: #fff;
 }

@@ -147,8 +147,12 @@ h4{
     width: 100%;
 }
 
-.gallary_img img{
+/* .gallary_img img{
     width: calc(100% / 5);
+} */
+
+.gallary_img img{
+    width: 100%;
 }
 
 .event{
@@ -171,6 +175,10 @@ h4{
     max-width: 1000px;
     /* width:100%; */
     border: 5px solid #000;
+}
+
+.event_text{
+    padding:30px;
 }
 
 ul{
@@ -216,7 +224,7 @@ footer{
 
 .footer{
     max-width: 630px;
-    width:100%;
+    /* width:100%; */
     display: flex;
     align-items: start;
     margin: 0 auto;
@@ -448,8 +456,17 @@ footer{
         margin: 0 auto;
     }
 
+    .event_text{
+        padding:30px;
+        display: block;
+    }
+
     .event_text li{
-        display: flex;
+        display: block;
+    }
+
+    .event_text li span{
+        display: block;
     }
 
     .date{
@@ -458,6 +475,9 @@ footer{
 
     .news{
         font-size:20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .access_title{
@@ -467,8 +487,7 @@ footer{
 
     .footer{
         flex-direction: column;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding:40px 10px;
     }
 
     .footer_text{

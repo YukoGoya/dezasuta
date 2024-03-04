@@ -8,7 +8,6 @@ footer,
 main,
 section,
 h1,
-h2,
 h3,
 h4,
 ul,
@@ -19,6 +18,19 @@ dl {
     padding: 0;
     line-height: 1;
     color: #686692;
+    font-family: "A1 Mincho", "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+        "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+        "ＭＳ 明朝", serif;
+    font-feature-settings: "palt";
+    box-sizing: border-box;
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 60px;
+    color: #04004A;
     font-family: "A1 Mincho", "游明朝", YuMincho, "Hiragino Mincho ProN W3",
         "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
         "ＭＳ 明朝", serif;

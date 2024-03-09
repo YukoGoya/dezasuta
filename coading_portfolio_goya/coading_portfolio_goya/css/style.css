@@ -4,15 +4,14 @@
 共通
 ========*/
 body{
-    padding-top: 100px;
+    /* padding-top: 100px; */
     background-color: #FDFFFF;
 }
 
 /*フォント読み込み*/
 @font-face {
-    /* font-display: swap; */
     font-family: 'Optima Bold';
-    src: url("..//font/font_web_up.ttf") format(truetype);
+    src: url("../font/optima-bold.ttf") format(truetype);
     font-weight: normal;
     font-style: normal;
 }
@@ -79,11 +78,10 @@ header
     align-items: center;
     justify-content: space-between;
     padding:0 10px;
-    position: absolute;
+    position: relative;
     top:50px;
     left:50px;
     z-index: 9999;
-    width: 100%;
     height: 100px;
     box-sizing: border-box;
 }
@@ -98,45 +96,59 @@ header
 
 }
 
-.header nav{
-    width:100%;
-    max-width: 740px;
-    /* display: none; */
+.header-nav{
+    display: none;
+}
 
+.open{
+    display: block;
+}
 
+.header-nav{
     background-image: url(../images/main_visual.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     padding-top: 50px;
     text-align: center;
+    z-index: 9996;
 }
 
-
-.nav{
+.header-nav::after{
     position: absolute;
-    width:100%;
-    height: 100vh;
-    background-image: url(../images/main_visual.png);
-    transform: translateX(100%);
-}
-
-.nav ul{
+    content: "";
+    width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: translate(-50%, -50%);
+    background-color: #FFFFFF5F;
+    top: 0;
+    left: 0;
+    z-index: 9997;
 }
 
-.nav li{
-    padding: 16px;
-    font-size: 16px;
-    color:#fff;
+.header-nav ul{
+    position: absolute;
+    z-index: 9998;
+    top: 50%;
+    transform: translateY(-50%);
+    right:160px;
+}
+
+.header-nav li{
+    padding:16px;
+    font-size: 48px;
     text-align: center;
 }
 
+.header-nav li a{
+    display: block;
+    color:#04004A;
+    font-family: 'Optima-Bold','san-serif';
+    text-align: left;
+}
 
 .logo{
     max-width: 80px;
@@ -150,7 +162,7 @@ header
 }
 
 /*ハンバーガーメニュー*/
-.humberger{
+.hamberger{
     width: 40px;
     height:20px;
     position: fixed;
@@ -158,36 +170,59 @@ header
     right: 20px;
     /* position: relative; */
     cursor: pointer;
-    /* content: ""; */
     transition: 0.5s;
+    z-index: 9999;
 }
 
-.humberger span{
+.hamberger span{
     display: inline-block;
 }
 
-.hum_1 {
+.ham_1 {
     position: absolute;
     width:40px;
     height: 2px;
     background-color: #04004A;
     top:0;
+    transform: 0.3s;
+    right: 0;
 }
 
-.hum_2 {
+.ham_2 {
     position: absolute;
     width:20px;
     height: 2px;
     background-color: #04004A;
     top:50%;
+    transform: 0.3s;
+    right: 0;
 }
 
-.hum_3 {
+.ham_3 {
     position: absolute;
     width:10px;
     height: 2px;
     background-color: #04004A;
     top:100%;
+    transform: 0.3s;
+    right: 0;
+}
+
+.open .ham_1{
+    transform: rotate(45deg);
+    background-color: #fff;
+    top: 0;
+}
+
+.open .ham_2{
+    background-color: transparent;
+}
+
+.open .ham_3{
+    transform: rotate(45deg);
+    background-color: #fff;
+    width: 40px;
+    top: 0;
 }
 
 
@@ -235,7 +270,7 @@ concept
 }
 
 .content_img{
-    width:50%;
+    width:62%;
 }
 
 .concept_img img{
@@ -530,9 +565,11 @@ aboutページ
 .about_page_pc{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     max-width: 1000px;
     margin: 0 auto;
     padding-top: 183px;
+    gap: 30px;
 }
 
 .main_title_about_pc img{
@@ -652,6 +689,7 @@ worksページ
 .main_visual_works{
     text-align: center;
     position: relative;
+    padding: 0 20px;
 }
 
 .main_visual_works img{
@@ -798,24 +836,32 @@ li{
 
 @media screen and (max-width:767px) {
 
+body{
+    padding-top: 48px;
+}
+
 .font_optima{
     font-size: 25px;
 }
 /*=======
 header
 =======*/
-.header,
-.header_inner,
-.header nav{
+.header{
     max-width: 375px;
+}
+
+.header-nav li{
+    font-size: 25px;
 }
 
 .logo{
     max-width: 22px;
+    top: 36px;
 }
 
 .humberger{
     width:30px;
+    top: 36px;
 }
 
 
@@ -843,7 +889,11 @@ main_visual
 }
 
 .main_title img{
-    max-width: 163px;
+    height: auto;
+    max-width: 180px;
+    border-radius: 0;
+    object-fit: fill;
+    margin-bottom: 180px;
 }
 
 /*=======
@@ -854,6 +904,11 @@ concept
     flex-direction: column;
     position: relative;
 }
+
+.concept_img{
+    width: 100%;
+}
+
 .concept_img img{
     max-width: 75%;
     position: relative;
@@ -862,6 +917,7 @@ concept
 .concept_text{
     width: 100%;
     text-align: right;
+    margin-top: 20px;
 }
 
 .concept_text h2{
@@ -871,7 +927,6 @@ concept
 }
 
 .concept_text p{
-    margin-top: -260px;
     font-size: 14px;
     line-height: 30px;
 }
@@ -992,6 +1047,10 @@ works
 ========*/
 .works_content{
     flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
 }
 
 .works_text .font_optima{
@@ -1002,23 +1061,25 @@ works
     font-size: 12px;
 }
 
-.works_content{
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .works_list{
     max-width: 315px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 /*========
 footer
 ========*/
+
+footer{
+    margin-top: 0px;
+}
+
 .footer{
     background-image: url(../images/footer_back_sp@2x.png);
+    margin-top: 0px;
 }
 
 .footer_text{
@@ -1059,6 +1120,7 @@ aboutページ
 .main_title_about_sp img{
     max-width: 90px;
     margin-top: -600px;
+    object-fit: contain;
 }
 
 .about_page_sp{
@@ -1161,6 +1223,7 @@ worksページ
 .main_title_works img{
     width: 94px;
     margin-top: -600px;
+    object-fit: contain;
 }
 
 .works_content_page{
@@ -1168,5 +1231,17 @@ worksページ
     margin: 0 auto;
     flex-wrap: wrap;
     padding-top: 100px;
+}
+
+
+/*========
+works詳細ページ
+========*/
+.works_view_title{
+    padding: 100px 0;
+}
+
+.works_view_text_{
+    padding: 0 10px;
 }
 }

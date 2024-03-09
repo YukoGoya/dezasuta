@@ -6,38 +6,46 @@
     <title>Portfolio</title>
 
     <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-
 <body>
-    <header id="header"><div class="header">
+    <header id="header">
+           <div class="header">
+               <div class="header_inner">
+                    <h1 class="logo">
+                           <a href="index.html">
+                              <img src="./images/logo.png" alt="呉屋　優子ポートフォリオ">
+                           </a>
+                     </h1>
 
-    <div class="header_inner">
-        <h1 class="logo">
-            <a href="index.html">
-                <img src="./images/logo.png" alt="呉屋　優子ポートフォリオ">
-            </a>
-        </h1>
+           <nav class="header-nav">
+               <ul>
+                <li class="li_item"><a href="./index.html#top" class="nav__link">Top</a></li>
+                <li class="li_item"><a href="./index.html#concept" class="nav__link">Concept</a></li>
+                <li class="li_item"><a href="about.html" class="nav__link">About</a></li>
+                <li class="li_item"><a href="index.html#skill" class="nav__link">Skill</a></li>
+                <li class="li_item"><a href="works.html" class="nav__link">Works</a></li>
+               </ul>
+           </nav>
 
-        <nav>
-            <ul>
-                <li><a href="#top">Top</a></li>
-                <li><a href="#concept">Concept</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#skill">Skill</a></li>
-                <li><a href="works.html">Works</a></li>
-            </ul>
-        </nav>
-    </div>
+     <!--hambergerメニュー-->
+           <div class="hamberger">
+               <span class="ham_1"></span>
+               <span class="ham_2"></span>
+               <span class="ham_3"></span>
+           </div>
+         </div>
+       </div>
+    </header>
 
-    <div class="humberger">
-        <span class="hum_1"></span>
-        <span class="hum_2"></span>
-        <span class="hum_3"></span>
-    </div>
-    </header></div>
-
-    <div class="works_view_main">
+    <div class="works_view_main" data-aos="fade-up">
         <div class="works_view_main_img">
            <img src="./images/works_5_beauty.png">
         </div>
@@ -119,5 +127,21 @@
            </p>
         </div>
     </footer>
+
+    <script>
+      AOS.init();
+
+      $(function(){
+        $(".hamberger").on("click",function(){
+            $(".header-nav").fadeToggle();
+            $(".hamberger").toggleClass("open");
+        });
+        $(".header-nav").click(function(){
+            $(".header-nav").fadeToggle();
+            $(".hamberger").removeClass("open");
+        });
+      });
+    </script>
+    </body>
 
     </html>

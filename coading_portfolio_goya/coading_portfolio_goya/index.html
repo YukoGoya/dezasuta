@@ -6,11 +6,14 @@
     <title>Portfolio</title>
 
     <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
     <header id="header">
@@ -22,27 +25,27 @@
                            </a>
                      </h1>
 
-           <nav>
+           <nav class="header-nav">
                <ul>
-                   <li><a href="#top">Top</a></li>
-                   <li><a href="#concept">Concept</a></li>
-                   <li><a href="about.html">About</a></li>
-                   <li><a href="#skill">Skill</a></li>
-                   <li><a href="works.html">Works</a></li>
+                   <li class="li_item"><a href="#top" class="nav__link">Top</a></li>
+                   <li class="li_item"><a href="#concept" class="nav__link">Concept</a></li>
+                   <li class="li_item"><a href="about.html" class="nav__link">About</a></li>
+                   <li class="li_item"><a href="#skill" class="nav__link">Skill</a></li>
+                   <li class="li_item"><a href="works.html" class="nav__link">Works</a></li>
                </ul>
            </nav>
 
-     <!--humbergerメニュー-->
-           <div class="humberger">
-               <span class="hum_1"></span>
-               <span class="hum_2"></span>
-               <span class="hum_3"></span>
+     <!--hambergerメニュー-->
+           <div class="hamberger">
+               <span class="ham_1"></span>
+               <span class="ham_2"></span>
+               <span class="ham_3"></span>
            </div>
          </div>
        </div>
     </header>
 
-    <div class="main_visual">
+    <div class="main_visual" data-aos="fade-up">
         <div class="main_img" id="top">
            <img src="./images/main_visual.png">
 
@@ -52,7 +55,7 @@
         </div>
     </div>
 
-    <section class="concept" id="concept">
+    <section class="concept" id="concept" data-aos="fade-up">
         <div class="concept_img">
             <img src="./images/top_concept.png">
         </div>
@@ -74,7 +77,7 @@
     </section>
 
 
-    <section class="about" id="about">
+    <section class="about" id="about" data-aos="fade-up">
     <div class="about_page_text">
         <h2 class="about_title font_optima">
             About
@@ -98,7 +101,7 @@
 
 
     <!--SP用aboutー-->
- <section class="about_sp" id="about">
+ <section class="about_sp" id="about" data-aos="fade-up">
     <div class="about_page_text_sp">
         <h2 class="about_title_sp font_optima">
             About
@@ -124,7 +127,7 @@
 
 
 
-    <section class="skill" id="skill">
+    <section class="skill" id="skill" data-aos="fade-up">
 
         <h2 class="skill_title font_optima">
             Skill
@@ -173,7 +176,7 @@
 
     </section>
 
-    <section class="works" id="works">
+    <section class="works" id="works" data-aos="fade-up">
     <h2 class="works_title font_optima">
         Works
     </h2>
@@ -235,11 +238,11 @@
        </a>
     </div>
 
-    <div class="btn-area_sp">
+    <!-- <div class="btn-area_sp">
         <a class="about_bottun_sp font_optima" href="about.html">
             View more
         </a>
-    </div>
+    </div> -->
 </section>
 
 
@@ -255,10 +258,18 @@
 </footer>
 
 <script>
-      $('.hamberger').on('click',function(){
-        $('.nav').fadeToggle();
-        $('.hamberger').toggleClass('open');
+  AOS.init();
+
+  $(function(){
+    $(".hamberger").on("click",function(){
+        $(".header-nav").fadeToggle();
+        $(".hamberger").toggleClass("open");
     });
+    $(".header-nav").click(function(){
+        $(".header-nav").fadeToggle();
+        $(".hamberger").removeClass("open");
+    });
+  });
 </script>
 </body>
 

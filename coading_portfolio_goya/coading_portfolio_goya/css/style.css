@@ -525,7 +525,7 @@ footer{
 /* 1600px以上になった時に波線が消えるのを防ぐ */
  @media screen and (min-width:1600px) {
     footer{
-        padding:300px 0 800px 0;
+        padding:300px 0 180px 0;
     }
 }
 

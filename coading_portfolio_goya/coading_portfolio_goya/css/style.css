@@ -80,7 +80,6 @@ header
     padding:0 10px;
     position: relative;
     top:50px;
-    left:50px;
     z-index: 9999;
     height: 100px;
     box-sizing: border-box;
@@ -146,7 +145,7 @@ header
 .header-nav li a{
     display: block;
     color:#04004A;
-    font-family: 'Optima-Bold','san-serif';
+    font-family: 'Optima Bold',san-serif;
     text-align: left;
 }
 
@@ -184,7 +183,7 @@ header
     height: 2px;
     background-color: #04004A;
     top:0;
-    transform: 0.3s;
+    transition: 0.3s;
     right: 0;
 }
 
@@ -194,7 +193,7 @@ header
     height: 2px;
     background-color: #04004A;
     top:50%;
-    transform: 0.3s;
+    transition: 0.3s;
     right: 0;
 }
 
@@ -204,13 +203,14 @@ header
     height: 2px;
     background-color: #04004A;
     top:100%;
-    transform: 0.3s;
+    transition: 0.3s;
     right: 0;
 }
 
 .open .ham_1{
     transform: rotate(45deg);
     background-color: #fff;
+    width: 40px;
     top: 0;
 }
 
@@ -219,7 +219,7 @@ header
 }
 
 .open .ham_3{
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
     background-color: #fff;
     width: 40px;
     top: 0;
@@ -466,7 +466,7 @@ works
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0 16px;
+    /* padding: 0 16px; */
 }
 
 .works_title{
@@ -518,9 +518,15 @@ footer{
     margin-top: 150px;
     padding: 180px 0;
     background-image: url(../images/footer_background.png);
-    /* background-repeat: no-repeat; */
     background-size: cover;
-    background-position: bottom 0;
+    background-position: bottom 0 left 0;
+}
+
+/* 1600px以上になった時に波線が消えるのを防ぐ */
+ @media screen and (min-width:1600px) {
+    footer{
+        padding:300px 0 800px 0;
+    }
 }
 
 .footer_text{
